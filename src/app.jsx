@@ -84,11 +84,11 @@ function App() {
             // Calculate total and badge
             const total = Object.values(newScores).reduce((sum, val) => sum + val, 0);
             let newBadge = '';
-            if (total >= 80) newBadge = 'Diamond';
-            else if (total >= 60) newBadge = 'Gold';
-            else if (total >= 40) newBadge = 'Silver';
-            else if (total >= 20) newBadge = 'Bronze';
-            else newBadge = 'Human';
+            if (total >= 80) newBadge = 'Human';
+            else if (total >= 60) newBadge = 'Cyborg';
+            else if (total >= 40) newBadge = 'Humanoid';
+            else if (total >= 20) newBadge = 'Sybil';
+            else newBadge = 'Sybil';
 
             setScores(newScores);
             setTotalScore(total);
