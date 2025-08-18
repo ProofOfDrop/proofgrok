@@ -1,0 +1,13 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: #1a202c;
+    margin: 0;
+}
+.hero-bg {
+    background: linear-gradient(135deg, #6B7280, #1F2937);
+}
+.badge-diamond { background: linear-gradient(135deg, #b9f6ca, #64b5f6); }
+.badge-gold { background: linear-gradient(135deg, #ffd700, #f0c05a); }
+.badge-silver { background: linear-gradient(135deg, #c0c0c0, #a8a8a8); }
+.badge-bronze { background: linear-gradient(135deg, #cd7f32, #a0522d); }
+.badge-human { background: linear-gradient(135deg, #87ceeb, #4682b4); }
