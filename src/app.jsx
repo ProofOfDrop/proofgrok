@@ -27,8 +27,8 @@ function App() {
         80001: { name: 'Polygon Mumbai', covalentChain: 'polygon-mumbai', moralisChain: 'mumbai' },
     };
 
-    const COVALENT_API_KEY = 'YOUR_COVALENT_API_KEY'; // Replace with your key
-    const MORALIS_API_KEY = 'YOUR_MORALIS_API_KEY'; // Replace with your key
+    const COVALENT_API_KEY = 'cqt_rQYkGgFvK3CcfjKw9K4gGBQmxyRK'; // Replace with your key
+    const MORALIS_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjQwMDhkMTc4LWQxNmItNDU4Yy05MTRkLWNlZjU1YzZmMjdiMyIsIm9yZ0lkIjoiNDY0MzAyIiwidXNlcklkIjoiNDc3NjY3IiwidHlwZUlkIjoiYTNhODc2MmUtYWRiNS00MDk1LWFmNmEtNDhmNGQ5ZTA4NDVkIiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3NTQ4MTI3MjQsImV4cCI6NDkxMDU3MjcyNH0.ssV3d1p5s7iDcYT2rZtosJ8J_z1cuuNvF9bU5X8O2HY'; // Replace with your key
 
     const calculateScore = async () => {
         try {
