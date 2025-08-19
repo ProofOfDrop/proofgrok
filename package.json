@@ -9,11 +9,11 @@
     "dependencies": {
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "wagmi": "^1.0.0",
-        "viem": "^1.0.0"
+        "wagmi": "^2.12.10",
+        "viem": "^2.21.23"
     },
     "devDependencies": {
-        "@vitejs/plugin-react": "^4.0.0",
-        "vite": "^4.3.0"
+        "@vitejs/plugin-react": "^4.3.1",
+        "vite": "^5.4.8"
     }
 }
