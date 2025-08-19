@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useAccount, useConnect, useNetwork, useSwitchChain } from 'wagmi';
+import { useAccount, useConnect, useChainId, useSwitchNetwork } from 'wagmi';
 import { injected } from '@wagmi/connectors';
 import './index.css';
 
@@ -20,8 +20,8 @@ function ErrorBoundary({ children }) {
 function App() {
     const { address, isConnected } = useAccount();
     const { connect } = useConnect();
-    const { chain } = useNetwork();
-    const { switchChain } = useSwitchChain();
+    const chainId = useChainId();
+    const { switchNetwork } = useSwitchNetwork();
     const [scores, setScores] = useState({
         walletAge: 0, gasSpent: 0, uniqueContracts: 0, governance: 0, defi: 0, airdrops: 0,
     });
@@ -47,7 +47,7 @@ function App() {
         }
         setIsLoading(true);
         try {
-            const config = networkConfigs[chain?.id] || networkConfigs[1];
+            const config = networkConfigs[chainId] || networkConfigs[1];
             let newScores = {
                 walletAge: 0, gasSpent: 0, uniqueContracts: 0, governance: 0, defi: 0, airdrops: 0,
             };
@@ -141,7 +141,7 @@ function App() {
                     <p className="mt-4 text-lg text-gray-300">Prove you're a legit crypto user. Connect your wallet to see your score.</p>
                     <div className="mt-8">
                         <select
-                            onChange={(e) => switchChain?.({ chainId: parseInt(e.target.value) })}
+                            onChange={(e) => switchNetwork?.({ chainId: parseInt(e.target.value) })}
                             className="bg-gray-800 text-white p-2 rounded-lg"
                             disabled={!isConnected}
                         >
