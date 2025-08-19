@@ -1,29 +1,27 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
-import { WagmiConfig, createConfig, configureChains, mainnet, sepolia } from 'wagmi';
-import { publicProvider } from 'wagmi/providers/public';
-import { polygon, polygonMumbai } from 'wagmi/chains';
-
-const { chains, publicClient } = configureChains(
-    [mainnet, sepolia, polygon, polygonMumbai],
-    [publicProvider()]
-);
+import { WagmiProvider, createConfig, http } from 'wagmi';
+import { mainnet, sepolia, polygon, polygonMumbai } from 'wagmi/chains';
+import { injected } from '@wagmi/connectors';
 
 const config = createConfig({
-    autoConnect: false,
-    publicClient,
+    chains: [mainnet, sepolia, polygon, polygonMumbai],
+    transports: {
+        [mainnet.id]: http(),
+        [sepolia.id]: http(),
+        [polygon.id]: http(),
+        [polygonMumbai.id]: http(),
+    },
     connectors: [
-        new InjectedConnector({ chains }),
-        // Optional: Add WalletConnect
-        // new WalletConnectConnector({ chains, options: { projectId: 'YOUR_WALLETCONNECT_PROJECT_ID' } }),
+        injected(),
     ],
 });
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
-        <WagmiConfig config={config}>
+        <WagmiProvider config={config}>
             <App />
-        </WagmiConfig>
+        </WagmiProvider>
     </StrictMode>
 );
